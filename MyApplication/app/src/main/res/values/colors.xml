@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="NightSky">#080C1E</color>
+    <color name="NightBlack">#000000</color>
+    <color name="NightDraw">#FFFFFF</color>
+    <color name="colorPrimary">#CACACA</color>
+    <color name="colorPrimaryDark">#5E5E5E</color>
+    <color name="colorAccent">#FF0000</color>
+</resources>
