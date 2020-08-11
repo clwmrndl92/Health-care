@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MemoListActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_memo_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbarFadeDuration="0"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/memo_list_button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="9" />
+
+    <LinearLayout
+    android:id = "@+id/memo_list_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/recyclerview_memo_list"
+    app:layout_constraintBottom_toBottomOf="parent">
+
+    <Button
+        android:id="@+id/button_memo_list_insert"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/transparent"
+        android:text="메모 추가"/>
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/button_memo_list_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:onClick="deleteData"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:text="삭제" />
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/button_memo_list_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:onClick="cancel"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:text="취소"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

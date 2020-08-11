@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 
 public class Memo extends RealmObject implements Parcelable {
@@ -16,10 +17,15 @@ public class Memo extends RealmObject implements Parcelable {
     private boolean isChecked = false;
 
     public Memo(){
-        //date = new Date();
         time = new Date().getTime();
         title = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss").format(time);
         content = "no content";
+    }
+
+    public Memo(Memo memo){
+        time = memo.getTime();
+        title = memo.getTitle();
+        content = memo.getContent();
     }
 
     public Memo(Parcel src){
@@ -87,4 +93,17 @@ public class Memo extends RealmObject implements Parcelable {
             return new Memo[size];
         }
     };
+
+    public void setMemoCheck(boolean bool){
+        if(bool){
+            isChecked = true;
+        }
+        else{
+            isChecked = false;
+        }
+    }
+
+    public boolean getChecked(){
+        return isChecked;
+    }
 }

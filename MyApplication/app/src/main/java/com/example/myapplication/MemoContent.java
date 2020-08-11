@@ -1,23 +1,18 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Date;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class ResultActivity extends AppCompatActivity {
+public class MemoContent extends AppCompatActivity {
     Memo memo;
     boolean saved = false;
     boolean editing = false;
@@ -29,21 +24,21 @@ public class ResultActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_memo_content);
 
 
         position = getIntent().getExtras().getInt("pos");
-        memo = MainActivity.mRealmResults.get(position);
+        memo = MemoListActivity.mRealmResults.get(position);
 
 
-        titleText = (EditText) findViewById(R.id.textView_result_title);
-        contentText = (EditText) findViewById(R.id.textView_result_content);
+        titleText = (EditText) findViewById(R.id.textView_memo_content_title);
+        contentText = (EditText) findViewById(R.id.textView_memo_content);
 
         titleText.setText(memo.getTitle());
         contentText.setText(memo.getContent());
 
-        Button buttonSave = (Button)findViewById(R.id.button_result_save);
-        final Button buttonEdit = (Button)findViewById(R.id.button_result_edit);
+        Button buttonSave = (Button)findViewById(R.id.button_memo_content_save);
+        final Button buttonEdit = (Button)findViewById(R.id.button_memo_content_edit);
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,9 +63,9 @@ public class ResultActivity extends AppCompatActivity {
     }
     @Override
     public void onBackPressed() {
-        if(!saved){
-            memoSave(MyApplication.memoConfig);
-        }
+//        if(!saved){
+//            memoSave(MyApplication.memoConfig);
+//        }
         super.onBackPressed();
     }
 
@@ -81,7 +76,7 @@ public class ResultActivity extends AppCompatActivity {
         memo.setContent(contentText.getText().toString());
         realm.commitTransaction();
         saved = true;
-        MainActivity.mRealmList.set(position,memo);
+        MemoListActivity.mRealmList.set(position,new Memo(memo));
     }
 
     public void memoEdit(Button buttonEdit, boolean editing){
