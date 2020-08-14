@@ -9,6 +9,8 @@ public class MyApplication extends Application {
 
     public static RealmConfiguration memoConfig;
     public static RealmConfiguration defaultConfig;
+    public static RealmConfiguration healthConfig;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -17,6 +19,11 @@ public class MyApplication extends Application {
                 .name("Memo.realm")
                 .deleteRealmIfMigrationNeeded()
                 .build();
+        healthConfig = new RealmConfiguration.Builder()
+                .name("Memo.realm")
+                .deleteRealmIfMigrationNeeded()
+                .build();
+
         //Realm.setDefaultConfiguration(defaultConfig);
     }
 }
