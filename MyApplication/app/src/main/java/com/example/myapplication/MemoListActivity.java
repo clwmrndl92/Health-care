@@ -71,7 +71,7 @@ public class MemoListActivity extends AppCompatActivity {
             public void onClick(View view, int position) {
                 Memo memo = mRealmList.get(position);
                 if(!selecting) {
-                    Intent intent = new Intent(getBaseContext(), MemoContent.class);
+                    Intent intent = new Intent(getBaseContext(), MemoContentActivity.class);
 
                     intent.putExtra("pos", position);
 
@@ -117,7 +117,7 @@ public class MemoListActivity extends AppCompatActivity {
                 //mAdapter.notifyDataSetChanged(); //변경된 데이터를 화면에 반영
 
                 //Toast.makeText(getApplicationContext(), memo.getTitle(), Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(getBaseContext(), MemoContent.class);
+                Intent intent = new Intent(getBaseContext(), MemoContentActivity.class);
 
                 intent.putExtra("pos", 0);
 

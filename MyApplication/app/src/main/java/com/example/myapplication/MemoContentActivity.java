@@ -1,18 +1,18 @@
 package com.example.myapplication;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
 
-public class MemoContent extends AppCompatActivity {
+public class MemoContentActivity extends AppCompatActivity {
     Memo memo;
     boolean saved = false;
     boolean editing = false;

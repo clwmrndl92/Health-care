@@ -20,8 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MemoListActivity"> </activity>
-        <activity android:name=".MemoContent"> </activity>
+        <activity android:name=".MemoContentActivity"> </activity>
         <activity android:name=".HealthActivity"> </activity>
+        <activity android:name=".HealthContentActivity"> </activity>
     </application>
 
 </manifest>
