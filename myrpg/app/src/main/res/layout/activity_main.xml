@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ziont_black"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="@color/black"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ziont" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:layout_weight="0.4">
+
+        <ImageButton
+            android:id="@+id/button_action"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_500"
+            android:scaleType="fitCenter"
+            android:src="@drawable/list"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toTopOf="@id/button_status"
+            app:layout_constraintEnd_toStartOf="@id/button_quest"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/button_quest"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_500"
+            android:scaleType="fitCenter"
+            android:src="@drawable/list"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toTopOf="@id/button_diary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_action"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/button_status"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_500"
+            android:scaleType="fitCenter"
+            android:src="@drawable/list"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_diary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/button_action" />
+
+        <ImageButton
+            android:id="@+id/button_diary"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/purple_500"
+            android:scaleType="fitCenter"
+            android:src="@drawable/list"
+            android:layout_margin="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_status"
+            app:layout_constraintTop_toBottomOf="@id/button_quest" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

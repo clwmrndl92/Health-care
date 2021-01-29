@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyRPGv1</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="quest">To Do</string>
+    <string name="status">상태</string>
+    <string name="action">행동</string>
+    <string name="diary">일기</string>
+</resources>
